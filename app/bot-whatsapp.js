@@ -15,7 +15,7 @@ export const start = (data) => {
         })
         // whatsapp.on('qr', (qr) => {
         //     qrcode.generate(qr, { small: true });
-        // })
+        // }
 
         whatsapp.on('ready', () => {
             console.log('ready')
