@@ -1,9 +1,9 @@
-import express from "express";
-import { start } from "./bot-whatsapp.js"
+// import express from "express";
+// import { start } from "./bot-whatsapp.js"
 
 
-const router = express.Router();
+// const router = express.Router();
 
-router.get('/bot', start);
+// router.get('/bot', start);
 
-export default router;
+// export default router;

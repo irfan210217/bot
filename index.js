@@ -1,10 +1,9 @@
 import express from "express";
-import router from "./app/routes.js";
+import { start } from "./app/bot-whatsapp.js"
 
 const app = express();
 
-app.use(router);
-
-app.listen(5000, () => {
+app.listen(5000, async () => {
+    await start();
     console.log("server running");
 })
