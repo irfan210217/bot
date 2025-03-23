@@ -1,9 +1,22 @@
 import express from "express";
+import axios from "axios";
 import { start } from "./app/bot-whatsapp.js"
 
 const app = express();
 
-app.listen(5000, async () => {
-    await start();
+app.get('/api/wa', (req, res) => {
+    start((data) => {
+        res.send(data);
+    })
+})
+
+app.get('/', async (req, res) => {
+    await axios.get('http://localhost:5000/api/wa');
+    res.send({
+        msg : "success"
+    })
+})
+
+app.listen(5000, () => {
     console.log("server running");
 })
