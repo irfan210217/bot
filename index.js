@@ -12,5 +12,5 @@ app.get('/api/wa', (req, res) => {
 })
 
 app.listen(5000, () => {
-    console.log("Server running");
+    console.log("Server Running");
 })
