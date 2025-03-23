@@ -1,6 +1,5 @@
 import { Client } from "whatsapp-web.js";
 import fs from "fs";
-import a from "qrcode-terminal";
 import qrcode from "qrcode";
 import { messageResponse } from "../src/components/depositBalance.js"
 
@@ -14,8 +13,7 @@ export const start = async (req, res) => {
         })
     
         whatsapp.on('ready', () => {
-            res.redirect('/');
-            res.send("success");
+            console.log('ready')
         })
     
         whatsapp.on('message_create', messageResponse);
