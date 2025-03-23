@@ -1,11 +1,13 @@
 import express from "express";
-// import { start } from "./app/bot-whatsapp.js"
+import { start } from "./app/bot-whatsapp.js"
 
 const app = express();
 
 app.get('/api/wa', (req, res) => {
-    res.send({
-        msg : true
+    start((data) => {
+        res.send({
+            msg : true
+        });
     })
 })
 
