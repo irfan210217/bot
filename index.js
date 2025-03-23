@@ -18,5 +18,5 @@ app.get('/', async (req, res) => {
 })
 
 app.listen(5000, () => {
-    console.log("server running");
+    console.log("Server running");
 })
