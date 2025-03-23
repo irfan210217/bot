@@ -11,7 +11,7 @@ app.get('/api/wa', (req, res) => {
 })
 
 app.get('/', async (req, res) => {
-    await axios.get('http://localhost:5000/api/wa');
+    await axios.get('bot-whatapp-tawny.vercel.app/api/wa');
     res.send({
         msg : "success"
     })
