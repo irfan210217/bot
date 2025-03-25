@@ -1,6 +1,5 @@
 import { Client } from "whatsapp-web.js";
 import fs from "fs";
-// import qrcode from "qrcode-terminal";
 import qrcode from "qrcode";
 import { messageResponse } from "../src/components/depositBalance.js"
 
