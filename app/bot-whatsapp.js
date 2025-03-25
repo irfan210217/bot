@@ -20,9 +20,6 @@ export const start = (data) => {
             let images = fs.createReadStream('./app/images/qrcode.png').pipe(res)
             return data(images);
         })
-        // whatsapp.on('qr', (qr) => {
-        //     qrcode.generate(qr, { small: true });
-        // }
 
         whatsapp.on('ready', () => {
             console.log('ready')
