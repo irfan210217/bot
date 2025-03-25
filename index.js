@@ -5,12 +5,10 @@ const app = express();
 
 app.get('/api/wa', (req, res) => {
     start((data) => {
-        res.send({
-            msg : true
-        });
+        res.send(data)
     })
 })
 
 app.listen(5000, () => {
-    console.log("Server Runninggg");
+    console.log("Server Running");
 })
