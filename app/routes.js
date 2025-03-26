@@ -1,9 +1,24 @@
-// import express from "express";
-// import { start } from "./bot-whatsapp.js"
+import express from "express";
+import fs from "fs";
+import { start } from "./bot-whatsapp.js"
 
 
-// const router = express.Router();
+const router = express.Router();
 
-// router.get('/bot', start);
+const deposit = (callback) => {
+    start((signID, error) => {
+        let data = fs.createReadStream('./app/images/qrcode.png');
+        callback(data, signID, error);
+    })
+};
 
-// export default router;
+const result = (req, res) => {
+    deposit((data, signID, error) => {
+        if (data) return res.redirect(`/status?signID=${signID}`);
+        return res.send(error);
+    });
+};
+
+router.get('/run', result);
+
+export default router;

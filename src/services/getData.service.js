@@ -27,10 +27,9 @@ export const createDeposit = async ({nominal, reff_id, api_key}, response) => {
 
     try {
         const { data } = await requestData.post(baseURL, request);
-        // let id = data.data.id;
         return response(data);
     } catch (error) {
-        return error;
+        return response(error);
     }
 };
 
