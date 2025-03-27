@@ -2,9 +2,17 @@ import { Client } from "whatsapp-web.js";
 import qrcode from "qrcode";
 import { messageResponse } from "../src/components/depositBalance.js"
 
-export const start = async (callback, rejected) => {
+export const start = (callback) => {
     try {
         const whatsapp = new Client();
+
+        // const whatsapp = new Client({
+        //     puppeteer: {
+        //         product: "chrome",
+        //         executablePath: "/usr/bin/chromium-browser",
+        //         args: ['--no-sandbox', '--disable-setuid-sandbox', '--headless']
+        //     }
+        // });
 
         whatsapp.on('qr', (qr) => {
             let signID = `nbm${Math.random().toString(36).substring(2, 10)}Vipergo`;
@@ -20,6 +28,6 @@ export const start = async (callback, rejected) => {
 
         whatsapp.initialize();
     } catch (error) {
-        rejected(error);
+        console.log(error);
     }
 };

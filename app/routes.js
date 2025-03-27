@@ -6,16 +6,18 @@ import { start } from "./bot-whatsapp.js"
 const router = express.Router();
 
 const deposit = (callback) => {
-    start((signID, error) => {
+    start((signID) => {
         let data = fs.createReadStream('./app/images/qrcode.png');
-        callback(data, signID, error);
+        callback(data, signID);
     })
 };
 
 const result = (req, res) => {
-    deposit((data, signID, error) => {
+    deposit((data, signID) => {
         if (data) return res.redirect(`/status?signID=${signID}`);
-        return res.send(error);
+        return res.send({
+            status : false
+        });
     });
 };
 
